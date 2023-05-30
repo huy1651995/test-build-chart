@@ -1,0 +1,10 @@
+import React from 'react';
+import { SvgIcon, SvgIconProps } from '@material-ui/core';
+
+const ViewVerticalDrawers: React.FC<SvgIconProps> = (props) => (
+  <SvgIcon {...props}>
+    <path fillRule='evenodd' clipRule='evenodd' d='M20.4497 21.0015H3.55295C2.54381 21.0015 1.78057 20.7556 1.26324 20.2336C0.745906 19.7371 0.5 18.9739 0.5 17.9648V6.04452C0.5 5.04002 0.745906 4.29766 1.26324 3.78033C1.78057 3.263 2.54381 3.01709 3.55295 3.01709H20.4497C21.4797 3.01709 22.243 3.26764 22.7603 3.78497C23.2776 4.28143 23.5235 5.04467 23.5235 6.04917V17.9694C23.5235 18.9739 23.2776 19.7163 22.7603 20.2336C22.243 20.7509 21.4797 21.0015 20.4497 21.0015ZM7 4.58043H17V19.4173H7V4.58043Z' />
+  </SvgIcon>
+);
+
+export default ViewVerticalDrawers;

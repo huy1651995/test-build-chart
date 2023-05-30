@@ -1,46 +1,25 @@
-# Getting Started with Create React App
+# What is the issue we get?
+- We are facing a very complicated issue with chart performance. 
+- We have 14 serial data on the chart (5761 data points/serial data).
+- Our app performance is running very well on the local (Local is a developer's laptop - Macbook PRO - M1 MAX - 64GB RAM). But supper lagging on the server.
+- So, we try to reproduce that issue on my local and get the same performance issue.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+==> To reproduce it on your side, please follow step by steps below.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Step by step to test this project
 
-### `npm start`
+1. Pull this repository to your local
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Open this project and run `yarn install`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+3. Compare the build with the local start (need run on 2 terminals)
+   a. Terminal 1: run `yarn build` -> wait for that build (5-10 mins) and run `npx server -s build` -> the app will on localhost:3000
+   b. Terminal 2: run `yarn start` -> the app will ask you to let it run on another port (port 3000 is already used for terminal 1 above) -> choose `yes` -> app will immediately launch on localhost:3001 (or another port which you can set)
+   c. Now you can open 2 browser tabs: localhost:3000 vs localhost:3001 to compare those chart performance
+   
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+For more information: 
+- The build process is compile our code into the javascript bundle and using inside of the docker, server using that docker image to run our app.
+- The start process is just compile and running on local.
