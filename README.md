@@ -1,9 +1,9 @@
 # What is the issue we get?
 
--  We are facing a very complicated issue with chart performance.
--  We have 14 serial data on the chart (5761 data points/serial data).
--  Our app performance is running very well on the local (Local is a developer's laptop - Macbook PRO - M1 MAX - 64GB RAM). But supper lagging on the server.
--  So, we try to reproduce that issue on my local and get the same performance issue.
+- We are facing a very complicated issue with chart performance.
+- We have 14 serial data on the chart (5761 data points/serial data).
+- Our app performance is running very well on the local (Local is a developer's laptop - Macbook PRO - M1 MAX - 64GB RAM). But supper lagging on the server.
+- So, we try to reproduce that issue on my local and get the same performance issue.
 
 ==> To reproduce it on your side, please follow step by steps below.
 
@@ -20,8 +20,8 @@
 
 For more information:
 
--  The build process is compile our code into the javascript bundle and using inside of the docker, server using that docker image to run our app.
--  The start process is just compile and running on local.
+- The build process is compile our code into the javascript bundle and using inside of the docker, server using that docker image to run our app.
+- The start process is just compile and running on local.
 
 ### Node18-Issue: To run `yarn build` and `yarn start` on Node 18 (recommend version on this project is Node 16)
 
@@ -34,4 +34,6 @@ For more information:
 2. In package.json
    Change: "start": "react-scripts start" --> "start": "react-scripts --openssl-legacy-provider start"
 
--  Preferences: https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported
+- Preferences: https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported
+
+//
