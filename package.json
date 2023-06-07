@@ -21,8 +21,9 @@
       "typescript": "^4.9.5"
    },
    "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build --max-old-space-size=8192",
+      "clean": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\; && npm cache clean --force && npm cache verify   ",
+      "start": "react-scripts --openssl-legacy-provider start",
+      "build": "react-scripts build --openssl-legacy-provider --max-old-space-size=8192",
       "test": "react-scripts test",
       "eject": "react-scripts eject"
    },
