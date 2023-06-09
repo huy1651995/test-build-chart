@@ -121,20 +121,20 @@ export function isBetweenDates(date: number, initialDate: number, endDate: numbe
 export const formatDateFromEpochInMillisec = (dateNumber: number): string =>
    moment(dateNumber).format('MMMM Do, YYYY h:mm:ss A');
 
-function generateArrayOfObjects(random: boolean) {
+function generateArrayOfObjects(random: boolean, maxNum: number = 5000) {
    const array = [];
    const startDate = 1683058545000;
    const step = 5 * 60 * 1000; // 5 minutes in milliseconds
    const valueRange = random ? 800 : 6000;
    const minValue = random ? 10 : 1000;
-   const maxNum = random ? 5000 : 10000;
+   // const maxNum = random ? 5000 : 10000;
    const precision = 1000000; // 6 decimals
-   for (let i = 0; i < maxNum; i++) {
+   for (let i = 0; i < maxNum; i += 1) {
       const timestamp = startDate + i * step;
 
       // const value = Math.random() * valueRange + minValue;
 
-      var value =
+      const value =
          Math.floor(Math.random() * (valueRange * precision) + minValue * precision) /
          (minValue * precision);
 
@@ -145,20 +145,19 @@ function generateArrayOfObjects(random: boolean) {
 
       array.push(object);
    }
-   console.log(array);
    return array;
 }
 
-export function generateFakeDate() {
+export function generateFakeDate(count: number = 2, pointCount: number = 5000) {
    const array = [];
-   for (let i = 0; i < 22; i++) {
-      const fakeName = `series-${i}`;
+   for (let i = 0; i < count; i += 1) {
+      const fakeName = `Exp #${i}`;
       const random = i % 2 === 0;
       const object = {
          name: fakeName,
          displayName: fakeName,
          rightAxis: random,
-         data: generateArrayOfObjects(random),
+         data: generateArrayOfObjects(random, pointCount),
       };
       array.push(object);
    }

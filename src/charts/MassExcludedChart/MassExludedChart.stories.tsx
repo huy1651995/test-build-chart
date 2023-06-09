@@ -1,4 +1,4 @@
-import MassExcludedChart from './MassExcludedChart';
+import MassExcludedChart from './MassExcludedChartAmChart';
 import React from 'react';
 
 export const Charts = () => {
