@@ -2,7 +2,7 @@ import MassExcludedChart from './MassExcludedChartAmChart';
 import React from 'react';
 
 export const Charts = () => {
-   return <MassExcludedChart />;
+   return <MassExcludedChart data={[]} />;
 };
 
 export default {

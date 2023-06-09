@@ -6,8 +6,6 @@ import { generateFakeDate } from './utils';
 import useSciChartHook from './Hooks/useSciChartHook';
 import { SciChartSurface } from 'scichart';
 
-export interface Props {}
-
 const useStyles = makeStyles((theme) => ({
    chart: {
       display: 'flex',
@@ -41,8 +39,11 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
    },
 }));
-
-const MassExcludedChartAmChart: React.FC<Props> = () => {
+export interface Props {
+   data: any;
+}
+const MassExcludedChartAmChart: React.FC<Props> = (props) => {
+   const { data } = props;
    SciChartSurface.useWasmFromCDN();
    // Android, JavaScript
 
@@ -53,15 +54,15 @@ const MassExcludedChartAmChart: React.FC<Props> = () => {
    const classes = useStyles();
 
    // Example usage
-   const arrayOfObjects = generateFakeDate(22, 5000);
+   // const arrayOfObjects = generateFakeDate(22, 5000);
 
-   const sciChartData = arrayOfObjects.map((data: any) => ({
-      x: data.data.map((d: any) => d.date) as Array<number>,
-      y: data.data.map((d: any) => d.value) as Array<number>,
-   }));
+   // const sciChartData = arrayOfObjects.map((data: any) => ({
+   //    x: data.data.map((d: any) => d.date) as Array<number>,
+   //    y: data.data.map((d: any) => d.value) as Array<number>,
+   // }));
 
    // @ts-ignore
-   useLineChart(divId, arrayOfObjects);
+   useLineChart(divId, data);
 
    // useSciChartHook(divId, sciChartData);
 

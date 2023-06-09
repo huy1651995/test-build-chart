@@ -6,8 +6,6 @@ import { generateFakeDate } from './utils';
 import useSciChartHook from './Hooks/useSciChartHook';
 import { SciChartSurface } from 'scichart';
 
-export interface Props {}
-
 const useStyles = makeStyles((theme) => ({
    chart: {
       display: 'flex',
@@ -42,7 +40,11 @@ const useStyles = makeStyles((theme) => ({
    },
 }));
 
-const MassExcludedChartSciChart: React.FC<Props> = () => {
+export interface Props {
+   data: any;
+}
+const MassExcludedChartSciChart: React.FC<Props> = (props) => {
+   const { data } = props;
    SciChartSurface.useWasmFromCDN();
    // Android, JavaScript
 
@@ -53,9 +55,9 @@ const MassExcludedChartSciChart: React.FC<Props> = () => {
    const classes = useStyles();
 
    // Example usage
-   const arrayOfObjects = generateFakeDate(22, 5000);
+   // const arrayOfObjects = generateFakeDate(22, 5000);
 
-   const sciChartData = arrayOfObjects.map((data: any) => ({
+   const sciChartData = data.map((data: any) => ({
       x: data.data.map((d: any) => d.date) as Array<number>,
       y: data.data.map((d: any) => d.value) as Array<number>,
    }));
