@@ -36,4 +36,8 @@ For more information:
 
 - Preferences: https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported
 
+
+### Remove `--openssl-legacy-provider` if you are using Node under 18
+
+
 //
