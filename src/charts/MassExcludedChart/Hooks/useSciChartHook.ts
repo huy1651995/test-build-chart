@@ -74,33 +74,25 @@ export async function initSciChart(
 
 const useSciChartHook = (chartDiv: string, data: any) => {
    const [sciChartSurface, setSciChartSurface] = React.useState<SciChartSurface>();
+   const chartRef = React.useRef<SciChartSurface>()
 
    const run = async () => {
       const sciChart = await initSciChart(chartDiv, data);
-
+      chartRef.current = sciChart
       setSciChartSurface(sciChart);
    };
 
    useEffect(() => {
       run();
       return () => {
-         // sciChart.then(sciChart => {
-         //   console.log(
-         //     '🚀 ~ file: useSciChartHook.ts:100 ~ return ~ sciChart:',
-         //     sciChart,
-         //   );
-
-         //   sciChart.renderableSeries.clear();
-         //   sciChart.yAxes.clear();
-         //   sciChart.xAxes.clear();
-         //   sciChart.delete();
-
-         //   console.log(
-         //     '🚀 ~ file: useSciChartHook.ts:100 ~ return ~ sciChart:',
-         //     sciChart,
-         //   );
-         // });
+        
          console.log('🚀 ~ file: useSciChartHook.ts:100 ~ return ~ Clean-up -------');
+
+         if(chartRef.current)
+         {
+            chartRef.current.delete()
+            chartRef.current = undefined
+         }
 
          sciChartSurface?.delete();
       };

@@ -46,7 +46,7 @@ Each developer can use this key to activate the software on their development ma
 2. Download and install SciChart WPF Installer v4 (must be run on your local)
 3. Windows Start Menu -> Type SciChart Licensing Wizard -> Start the wizard
    Select ‘I would like to Activate a License Via the Internet’
-   Enter your www.scichart.com Username (not email), Password and Serial Key. Serials can be found at www.scichart.com/profile or in your LicenseCertificate Email.
+   Enter your www.scichart.com `Username (not email), Password (register by Eog email)` and Serial Key. Serials can be found at www.scichart.com/profile or in your LicenseCertificate Email.
 
 Serial Key: 7507a833-a8e0-4227-ba53-8df7a3de0442
 

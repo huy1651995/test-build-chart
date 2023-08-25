@@ -112,9 +112,12 @@ const useLineChart = (chartDiv: string, chartData: Array<Series>) => {
 
       return () => {
          console.log('AmChart --- Clean UP ---- ');
+       
+         
          root.dispose();
       };
    }, [chartDiv, chartData]);
+   
    return chartRef.current;
 };
 
